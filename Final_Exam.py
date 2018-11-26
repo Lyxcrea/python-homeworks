@@ -24,9 +24,8 @@ import random
 
 numList = []
 
-for i in range(0, 10, 1):
-    if i < 10:
-        number = random.randint(20,30)
+for i in range(0, 10, 1):    
+    number = random.randint(20,30)
     numList.append(number)
 
 def mySort(list):
@@ -43,22 +42,25 @@ for i in numList:
     sortList.append(int(i))
 
 sortList = mySort(sortList)
-print(numList)
-print(sortList)
+
+print("Original List:", numList)
+print("Sorted List:", sortList)
 
 def sum(list):
     total = 0
     for i in range(0,len(list), 1):
         total += list[i]
     return total
-print("Sum of list is ", sum(sortList))
+
+print("Sum of list is", sum(numList))
 
 def average(list):
     total = 0
     for i in range(0, len(list), 1):
         total += list[i]
     return total / len(list)
-print("Average of list is ", average(sortList))
+
+print("Average of list is", average(numList))
 
 def calcMedian(list):
     median = 0
@@ -68,17 +70,34 @@ def calcMedian(list):
     else:
         median = list[middle] 
     return median
-print("Median of list is ", calcMedian(sortList))
+
+print("Median of list is", calcMedian(numList))
+
 
 evencnt = 0
-def isEven(list):
-    for number in numList:
-        if number%2 == 0:
-            evencnt += 1
-isEven(sortList)
+def isEven(N):
+    if N%2 == 0:
+        return True
+    else:
+        return False
+
+for i in numList:
+    if isEven(i):
+        evencnt += 1
+
 print("There are %s numbers even." %evencnt)
 
-# I dont know what to do with isEven.
 
+'''
+>>> 
+========= RESTART: C:\Users\Charlize\Documents\Python\Final_Exam.py =========
+Original List: [23, 26, 26, 21, 27, 24, 26, 27, 22, 28]
+Sorted List: [21, 22, 23, 24, 26, 26, 26, 27, 27, 28]
+Sum of list is 250
+Average of list is 25.0
+Median of list is 25.5
+There are 6 numbers even.
+>>>
+'''
 
 
